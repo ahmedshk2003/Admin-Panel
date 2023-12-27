@@ -79,9 +79,19 @@ body {
     list-style-type: none;
 }
 
+.sidebarList-under{
+    padding: 0;
+    list-style-type: none;
+}
+
 .sidebarListItem {
     padding: 20px 20px 20px 20px;
     font-size: 18px;
+}
+
+.sidebarListItem-under{
+    padding: 10px 20px 5px 50px;
+    font-size: 15px;
 }
 
 .sidebarListItem:hover {
@@ -89,11 +99,17 @@ body {
     cursor: pointer;
 }
 
+.sidebarListItem-under:hover{
+    cursor: pointer;
+}
 .sidebarListItem>a {
     text-decoration: none;
     color: #9e9ea4;
 }
-
+.sidebarListItem-under> a{
+    text-decoration: none;
+    color: #9e9ea4;
+}
 .sidebarResponsive {
     display: inline !important;
     position: absolute;

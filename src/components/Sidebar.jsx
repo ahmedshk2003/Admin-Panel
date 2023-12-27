@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsListCheck, BsMenuButtonWideFill, BsFillGearFill } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 
-export const Sidebar = ({openSidebarToggle}) => {
+export const Sidebar = ({ openSidebarToggle }) => {
+
+  const [dropdown, setdropdown] = useState({
+    drop: 0
+  });
+
+  const handleInventry = () => {
+    setdropdown((prev) => ({
+      drop: prev.drop === 0 ? 1 : 0
+    }));
+
+  };
+
+  const { drop } = dropdown
+
   return (
     <aside id='sidebar' className={openSidebarToggle ? "sidebarResponsive" : ""}>
       <div className='sidebarTitle'>
@@ -14,24 +29,44 @@ export const Sidebar = ({openSidebarToggle}) => {
       </div>
       <ul className='sidebarList'>
         <li className='sidebarListItem'>
-          <a href=''>
+          <Link to="/">
             <BsGrid1X2Fill className='icon' /> Dashboard
-          </a>
+          </Link>
 
         </li>
-        <li className='sidebarListItem'>
-          <a href=''>
-            <BsFillArchiveFill className='icon' /> Products
-          </a>
+        <li className='sidebarListItem' onClick={() => handleInventry()}>
+
+          <BsFillArchiveFill className='icon' /> Inventory
 
         </li>
-        <li className='sidebarListItem'>
-          <a href=''>
-            <BsFillGrid3X3GapFill className='icon' /> Categories
-          </a>
+        {
+          drop === 1 ? (
 
+            <ul className='sidebarList-under'>
+              <li className='sidebarListItem-under'>
+                <Link to="/addinventory">
+                  add inventory
+                </Link>
+              </li>
+              <li className='sidebarListItem-under'>
+                <Link to="/showinventry">
+                  Show inventory
+                </Link>
+              </li>
+            </ul>
+          ) : null
+        }
+
+
+
+
+          <li className='sidebarListItem'>
+         <Link to="/Invntory">
+            <BsFillGrid3X3GapFill className='icon' /> Catagory
+            </Link>
         </li>
-        <li className='sidebarListItem'>
+
+        {/* <li className='sidebarListItem'>
           <a href=''>
             <BsPeopleFill className='icon' /> Customers
           </a>
@@ -54,7 +89,7 @@ export const Sidebar = ({openSidebarToggle}) => {
             <BsFillGearFill className='icon' /> Setting
           </a>
 
-        </li>
+        </li> */}
       </ul>
     </aside>
 

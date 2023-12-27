@@ -1,18 +1,11 @@
-import React, { useState } from 'react'
+import React from "react"
 import "./App.css"
-import { Main } from './components/Main'
-
-
-
+import Layout from './Layout'
 
 
 export const App = () => {
-
-
   return (
-    <Main />
+   <Layout />
   )
-
-
 
 }
