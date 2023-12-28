@@ -8,7 +8,7 @@ export const Header = ({ openSidebar }) => {
                 <BsJustify className='icon' onClick={openSidebar} />
             </div>
             <div className='headerLeft'>
-                <h1>Mr.Ahmed Shaikh</h1>
+                <h1>Welcome, Mr.Ahmed Shaikh</h1>
             </div>
             <div className='headerRight'>
                 <BsFillBellFill className='icon' />
