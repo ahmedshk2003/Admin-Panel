@@ -45,12 +45,12 @@ export const Sidebar = ({ openSidebarToggle }) => {
             <ul className='sidebarList-under'>
               <li className='sidebarListItem-under'>
                 <Link to="/addinventory">
-                  add inventory
+                  Add products
                 </Link>
               </li>
               <li className='sidebarListItem-under'>
                 <Link to="/showinventry">
-                  Show inventory
+                  Show products
                 </Link>
               </li>
             </ul>
@@ -61,8 +61,8 @@ export const Sidebar = ({ openSidebarToggle }) => {
 
 
           <li className='sidebarListItem'>
-         <Link to="/Invntory">
-            <BsFillGrid3X3GapFill className='icon' /> Catagory
+         <Link to="/invoice">
+            <BsFillGrid3X3GapFill className='icon' /> Invoice
             </Link>
         </li>
 

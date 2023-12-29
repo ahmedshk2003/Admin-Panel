@@ -6,10 +6,10 @@ export const Home = () => {
 
   const data = [
     {
-      name: 'Janu',
+      name: 'Jan',
       uv: 100,
       pv: 400,
-      
+
     },
     {
       name: 'Feb',
@@ -43,7 +43,7 @@ export const Home = () => {
     },
     {
       name: 'July',
-      uv:490,
+      uv: 490,
       pv: 300,
       amt: 700,
     },

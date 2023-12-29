@@ -9,6 +9,7 @@ import { Main } from './Main'
  } from "react-router-dom";
 import AddInventory from './pages/AddInventory';
 import ShowInventory from './pages/ShowInventory';
+import Invoice from './pages/Invoice';
 
 
 const Layout = () => {
@@ -21,6 +22,7 @@ const Layout = () => {
                         <Route path='/' element={<Home />} />
                         <Route path='/addinventory' element={<AddInventory />} />
                         <Route path='/showinventry' element={<ShowInventory />} />
+                        <Route path='/invoice' element={<Invoice/>} />
                     </Routes>
                 </Main>
             </Router>

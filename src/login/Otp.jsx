@@ -7,6 +7,7 @@ export const Otp = (props) => {
         <h1 className='loginTxt'>Enter OTP</h1>
         <input type='text' placeholder='OTP' className='loginInput' onChange={props.change} value={props.value}></input>
         <button onClick={props.click} className='submitBtn'>Submit</button>
+        <h3 className='errorTxt'>{props.error}</h3>
       </div>
     </>
   )
