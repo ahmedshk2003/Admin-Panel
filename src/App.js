@@ -1,19 +1,20 @@
 import React, { useState } from "react";
-import "./App.css";
 import Layout from './Layout';
 import { Email } from "./login/Email";
 import { Password } from "./login/Password";
 import { Otp } from "./login/Otp";
-import { json } from "react-router-dom";
+import './App.css'
 
-export const App = () => {
+const App = () => {
   const [authStep, setAuthStep] = useState('email');
   const [newData, setNewData] = useState({
     email: '',
     password: '',
     otp: '',
+  
+  });
 
-  })
+  const [error, setError] = useState('')
 
 
   const data = {
@@ -21,8 +22,7 @@ export const App = () => {
     email: 'saad',
     password: 'saad',
     otp: '1234'
-
-  }
+  };
 
   const handleValidation = (e, key) => {
     setNewData(
@@ -31,72 +31,77 @@ export const App = () => {
         [key]: e.target.value
       }
     )
-
+    setError('')
   }
 
+
+
+
+  
 
   const handleEmail = () => {
-
-
-    if (data.email === newData.email) {
+    if (data.email === newData.email.trim()) {
       setAuthStep('password');
+    } else {
+      setError('Invalid email. Please enter the correct email.');
     }
-  }
 
-
-
+  };
 
   const handlePassword = () => {
-    if (data.password === newData.password)
+    if (data.password === newData.password) {
       setAuthStep('otp');
-  }
+    }
+    else {
+      setError('Invalid password. Please enter the correct password.');
+    }
+  };
 
   const handleOtp = () => {
-    if (data.otp == newData.otp) {
-
-      console.log(newData)
-      setAuthStep('layout')
-      localStorage.setItem("loggedin", JSON.stringify({ email: newData.email, password: newData.password, OTP: newData.otp }))
-    }
-
-  }
-
-  function handleRender() {
-    if (authStep === 'email') {
-      return (
-        <Email click={handleEmail}
-          change={(e) => handleValidation(e, "email")}
-          value={newData.email}
-        />
-      )
-    }
-    else if (authStep === 'password') {
-      return (
-        <Password click={handlePassword}
-          change={(e) => handleValidation(e, "password")}
-          value={newData.password} />
-      )
-    } else if (authStep === 'otp') {
-      return <Otp
-        click={handleOtp}
-        change={(e) => handleValidation(e, "otp")}
-        value={newData.otp} />
-
-    }
-    else if (authStep === 'layout') {
-      return <Layout />
+    if (data.otp === newData.otp) {
+      localStorage.setItem('LoggedIn', '1');
+      setAuthStep('layout');
     } else {
-      return null
+      setError('Invalid OTP. Please enter the correct OTP.');
     }
-  }
+  };
 
-
+  // const isLoggedIn = localStorage.getItem('LoggedIn')
   return (
     <>
-      {
-        handleRender()
-      }
+
+
+      {authStep === 'email' ?
+        <Email
+          click={handleEmail}
+          change={(e) => handleValidation(e, "email")}
+          value={newData.email}
+          error={error}
+        />
+        : authStep === 'password' ?
+          <Password
+            click={handlePassword}
+            change={(e) => handleValidation(e, "password")}
+            value={newData.password}
+            error={error}
+          />
+          : authStep === 'otp' ?
+            <Otp
+              click={handleOtp}
+              change={(e) => handleValidation(e, "otp")}
+              value={newData.otp}
+              error={error}
+              
+             
+            />
+            
+           
+            : authStep === 'layout' ?
+              <Layout />
+              : null}
+                    
     </>
   );
-}
+};
 
+export default App;

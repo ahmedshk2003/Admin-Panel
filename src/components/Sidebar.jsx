@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsListCheck, BsMenuButtonWideFill, BsFillGearFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
-import SidebarItem from '../common/SidebarItems'
 
 export const Sidebar = ({ openSidebarToggle }) => {
 
@@ -59,12 +58,12 @@ export const Sidebar = ({ openSidebarToggle }) => {
             <ul className='sidebarList-under'>
               <li className='sidebarListItem-under'>
                 <Link to="/addinventory">
-                  add inventory
+                  Add products
                 </Link>
               </li>
               <li className='sidebarListItem-under'>
                 <Link to="/showinventry">
-                  Show inventory
+                  Show products
                 </Link>
               </li>
             </ul>
@@ -76,8 +75,8 @@ export const Sidebar = ({ openSidebarToggle }) => {
 
 
           <li className='sidebarListItem'>
-         <Link to="/Invntory">
-            <BsFillGrid3X3GapFill className='icon' /> Catagory
+         <Link to="/invoice">
+            <BsFillGrid3X3GapFill className='icon' /> Invoice
             </Link>
         </li>
 
