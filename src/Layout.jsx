@@ -12,6 +12,7 @@ import ShowInventory from './pages/ShowInventory';
 
 
 const Layout = () => {
+
     return (
         <div>
 

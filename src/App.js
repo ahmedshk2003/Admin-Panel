@@ -4,20 +4,22 @@ import Layout from './Layout';
 import { Email } from "./login/Email";
 import { Password } from "./login/Password";
 import { Otp } from "./login/Otp";
+import { json } from "react-router-dom";
 
 export const App = () => {
   const [authStep, setAuthStep] = useState('email');
   const [newData, setNewData] = useState({
     email: '',
     password: '',
-    otp: ''
+    otp: '',
 
   })
 
+
   const data = {
 
-    email: 'ahmedshaikh',
-    password: 'ahmedshaikh',
+    email: 'saad',
+    password: 'saad',
     otp: '1234'
 
   }
@@ -25,62 +27,76 @@ export const App = () => {
   const handleValidation = (e, key) => {
     setNewData(
       {
+        ...newData,
         [key]: e.target.value
       }
     )
-  
+
   }
 
 
   const handleEmail = () => {
 
-    const email = data.email
-    const password = data.password
-    const otp = data.otp
 
     if (data.email === newData.email) {
-
       setAuthStep('password');
-
     }
   }
 
 
 
 
-const handlePassword = () => {
-  if (data.password === newData.password)
-    setAuthStep('otp');
-}
+  const handlePassword = () => {
+    if (data.password === newData.password)
+      setAuthStep('otp');
+  }
 
-const handleOtp = () => {
-  if (data.otp === newData.otp)
-    localStorage.setItem('Logged In', 1)
-  setAuthStep('layout')
-}
+  const handleOtp = () => {
+    if (data.otp == newData.otp) {
 
+      console.log(newData)
+      setAuthStep('layout')
+      localStorage.setItem("loggedin", JSON.stringify({ email: newData.email, password: newData.password, OTP: newData.otp }))
+    }
 
+  }
 
-
-return (
-  <>
-    {authStep === 'email' ?
-      <Email click={handleEmail}
-        change={(e) => handleValidation(e, "email")}
-        value={newData.email}
-      />
-      : authStep === 'password' ?
+  function handleRender() {
+    if (authStep === 'email') {
+      return (
+        <Email click={handleEmail}
+          change={(e) => handleValidation(e, "email")}
+          value={newData.email}
+        />
+      )
+    }
+    else if (authStep === 'password') {
+      return (
         <Password click={handlePassword}
           change={(e) => handleValidation(e, "password")}
           value={newData.password} />
-        : authStep === 'otp' ?
-          <Otp
-            click={handleOtp}
-            change={(e) => handleValidation(e, "otp")}
-            value={newData.otp} />
-          : authStep === 'layout' ?
-            <Layout/> : null}
-  </>
-);
+      )
+    } else if (authStep === 'otp') {
+      return <Otp
+        click={handleOtp}
+        change={(e) => handleValidation(e, "otp")}
+        value={newData.otp} />
+
+    }
+    else if (authStep === 'layout') {
+      return <Layout />
+    } else {
+      return null
+    }
+  }
+
+
+  return (
+    <>
+      {
+        handleRender()
+      }
+    </>
+  );
 }
 

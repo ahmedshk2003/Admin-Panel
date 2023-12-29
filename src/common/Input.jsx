@@ -1,31 +1,27 @@
-import React from 'react'
-import { TextField } from '@mui/material'
+import React from 'react';
 
-const InputNumber = () => {
-
+const Input= ({
+    className = 'Global-input', 
+    type, 
+    placeholder, 
+    value, 
+    required, 
+    disabled, 
+    onChange, 
+    ...props
+}) => {
 
     return (
-
-        <TextField
-            id="outlined-number"
-            label="Number"
-            type="number"
-            InputLabelProps={{
-                shrink: true,
-            }}
-        />
+         <input 
+          className={className}
+          onChange={onChange}
+          type={type}
+          placeholder={props.placeholder}
+          value={value}
+          required
+         />
     )
 }
 
 
-const InputText = () => {
-    return(
-
-        <TextField id="outlined-search" label="Search field" type="search" />
-    )
-
-}
-
-
-
-export { InputNumber, InputText }
+export {Input}

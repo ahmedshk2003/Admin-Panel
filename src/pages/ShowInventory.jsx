@@ -13,7 +13,7 @@ const ShowInventory = () => {
       {
         data.map((elem, id)=>{
           return(<div key={id} >
-            <h2>{elem.ProducCategory}</h2>
+            <h2>{elem.category}</h2>
             <h3>{elem.name}</h3>
             <h4>{elem.key}</h4>
             </div>)

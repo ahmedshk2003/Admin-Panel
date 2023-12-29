@@ -1,12 +1,26 @@
 import React, { useState } from 'react'
 import { BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsListCheck, BsMenuButtonWideFill, BsFillGearFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
+import SidebarItem from '../common/SidebarItems'
 
 export const Sidebar = ({ openSidebarToggle }) => {
 
   const [dropdown, setdropdown] = useState({
     drop: 0
   });
+
+
+
+  // [
+  //   {
+  //     id: "inventory",
+  //     "name": "inventory", 
+  //     dropdown: true, 
+  //     drop_down_active: false, 
+  //     dropdown_menu: [{name: "add inventory", id: "add_inventory", to:""}],
+  //     to:""
+  //   }
+  // ]
 
   const handleInventry = () => {
     setdropdown((prev) => ({
@@ -60,36 +74,13 @@ export const Sidebar = ({ openSidebarToggle }) => {
 
 
 
+
           <li className='sidebarListItem'>
          <Link to="/Invntory">
             <BsFillGrid3X3GapFill className='icon' /> Catagory
             </Link>
         </li>
 
-        {/* <li className='sidebarListItem'>
-          <a href=''>
-            <BsPeopleFill className='icon' /> Customers
-          </a>
-
-        </li>
-        <li className='sidebarListItem'>
-          <a href=''>
-            <BsListCheck className='icon' /> Inventory
-          </a>
-
-        </li>
-        <li className='sidebarListItem'>
-          <a href=''>
-            <BsMenuButtonWideFill className='icon' /> Reports
-          </a>
-
-        </li>
-        <li className='sidebarListItem'>
-          <a href=''>
-            <BsFillGearFill className='icon' /> Setting
-          </a>
-
-        </li> */}
       </ul>
     </aside>
 
