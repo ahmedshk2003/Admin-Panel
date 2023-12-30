@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import Layout from './Layout';
 import { Email } from "./login/Email";
 import { Password } from "./login/Password";
@@ -17,11 +17,19 @@ const App = () => {
 
   const [error, setError] = useState('')
 
+  useEffect(() => {
+    
+    const isLoggedIn = localStorage.getItem('LoggedIn' , '1') 
+    if (isLoggedIn) {
+      setAuthStep('layout');
+    }
+  }, []);
+
 
   const data = {
 
-    email: 'saad',
-    password: 'saad',
+    email: 'Ahmed',
+    password: 'Ahmed',
     otp: '1234'
   };
 

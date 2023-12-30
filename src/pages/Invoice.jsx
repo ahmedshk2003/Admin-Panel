@@ -21,7 +21,7 @@ const Invoice = () => {
   const generateInvoice = (e) => {
     e.preventDefault();
 
-    // Logic to generate and display the invoice using invoiceData
+    
     const generatedInvoice = `
       Invoice No.: ${invoiceData.invoiceNo}
       Service Provider: ${invoiceData.serviceProvider}
