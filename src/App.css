@@ -194,7 +194,11 @@ body {
 /* input fields  */
 .InputFields{
     border: 2px solid white;
+
 }
+
+/* loggedin style  */
+
 .loginTxt {
     color: white;
   
@@ -234,10 +238,9 @@ body {
  }
 
 
- /* global inputs */
- .Global-input{
-  width: 30rem, 
- }
+
+
+  /* involice styles */
  .invoiceInputs{
     display: flex;
     flex-direction: row;

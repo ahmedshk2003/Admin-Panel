@@ -1,22 +1,22 @@
 import React from 'react';
+import "./Style.css"
 
-const Input= ({
-    className = 'Global-input', 
+const Input= ({ 
     type, 
     placeholder, 
     value, 
     required, 
     disabled, 
-    onChange, 
+    Change, 
     ...props
 }) => {
 
     return (
          <input 
-          className={className}
-          onChange={onChange}
+          className="Global-input"
+          onChange={Change}
           type={type}
-          placeholder={props.placeholder}
+          placeholder={placeholder}
           value={value}
           required
          />
@@ -24,4 +24,4 @@ const Input= ({
 }
 
 
-export {Input}
+export default Input

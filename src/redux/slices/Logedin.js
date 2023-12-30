@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const isLoggedin= createSlice({
     name:"Logedin",
-    initialState:!!localStorage.getItem("loggedin"),
+    initialState:!!localStorage.getItem("loggedin", {}),
     reducers:{
         logged (state, actions){
         

@@ -4,6 +4,7 @@ import { Email } from "./login/Email";
 import { Password } from "./login/Password";
 import { Otp } from "./login/Otp";
 import './App.css'
+import utils from "./utils/index";
 
 const App = () => {
   const [authStep, setAuthStep] = useState('email');
@@ -11,7 +12,7 @@ const App = () => {
     email: '',
     password: '',
     otp: '',
-  
+
   });
 
   const [error, setError] = useState('')
@@ -37,7 +38,7 @@ const App = () => {
 
 
 
-  
+
 
   const handleEmail = () => {
     if (data.email === newData.email.trim()) {
@@ -59,47 +60,62 @@ const App = () => {
 
   const handleOtp = () => {
     if (data.otp === newData.otp) {
-      localStorage.setItem('LoggedIn', '1');
+      localStorage.setItem('loggedin', JSON.stringify({ email: newData.email, password: newData.password, otp: newData.otp }));
+      localStorage.setItem('validation', 1)
       setAuthStep('layout');
     } else {
       setError('Invalid OTP. Please enter the correct OTP.');
     }
   };
 
-  // const isLoggedIn = localStorage.getItem('LoggedIn')
-  return (
-    <>
+  // loggedin validation
+  const Validation = utils.getLocalStorage("validation")
 
-
-      {authStep === 'email' ?
+  function LoginRenderFunction() {
+    if (authStep === 'email') {
+      return (
         <Email
           click={handleEmail}
           change={(e) => handleValidation(e, "email")}
           value={newData.email}
           error={error}
         />
-        : authStep === 'password' ?
-          <Password
-            click={handlePassword}
-            change={(e) => handleValidation(e, "password")}
-            value={newData.password}
-            error={error}
-          />
-          : authStep === 'otp' ?
-            <Otp
-              click={handleOtp}
-              change={(e) => handleValidation(e, "otp")}
-              value={newData.otp}
-              error={error}
-              
-             
-            />
-            
-           
-            : authStep === 'layout' ?
-              <Layout />
-              : null}
-                    
+      )
+    } else if (authStep === 'password') {
+      return (
+        <Password
+          click={handlePassword}
+          change={(e) => handleValidation(e, "password")}
+          value={newData.password}
+          error={error}
+        />
+      )
+    } else if (authStep === 'otp') {
+      return (
+        <Otp
+          click={handleOtp}
+          change={(e) => handleValidation(e, "otp")}
+          value={newData.otp}
+          error={error}
+        />
+      )
+    } else {
+      return (null)
+    }
+  }
+
+
+  return (
+    <>
+
+      {
+        authStep === 'layout' ||  Number(Validation) === 1? (
+          <Layout />
+        ):(
+          LoginRenderFunction()
+        )
+
+        }
     </>
   );
 };

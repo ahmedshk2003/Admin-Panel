@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import ProductsCategory from '../database/Products';
 import { useDispatch } from 'react-redux';
 import { addinventory } from '../redux/slices/Inventory';
-import { Input } from '../common/Input';
-
+import Input from "../common/Input";
+import  {Select, Option} from '../common/Dropdown';
 
 const AddInventory = () => {
 
@@ -39,14 +39,13 @@ const AddInventory = () => {
     <div>
       <select value={productDetails.Category} onChange={(e)=>handleChange(e, "Category")} >
         {ProductsCategory.map((elem, index) => {
-          return (<option key={index}>{elem}</option>)
+          return (<option keys={index} value={elem}>{elem}</option>)
         })}
       </select>
 
-      {/* <input type="text" value={productName} onChange={(e) => setproductName(e.target.value)} /> */}
-      <Input value={productDetails.pro_code} placeholder={"Enter product code"} change={(e)=>handleChange(e, "pro_code")} />
+      <Input value={productDetails.pro_code} placeholder={"Enter product code"} Change={(e)=>handleChange(e, "pro_code")} />
 
-      <Input value={productDetails.name} placeholder={"Enter product Name"} change={(e)=>handleChange(e, "name")} />
+      <Input value={productDetails.name} placeholder={"Enter product Name"} Change={(e)=>handleChange(e, "name")} />
       
 
       <button onClick={handleSubmit}>Submit</button>

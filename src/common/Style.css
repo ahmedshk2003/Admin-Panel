@@ -1,0 +1,16 @@
+ /* global inputs */
+ .Global-input{
+    width: 20rem;
+    font-size: 1rem;
+    border-radius: 0.4rem;
+    border: none;
+   }
+  
+   .Global-select{
+    width: 18rem;
+     height: 2rem;
+   }
+   .Global-option{
+    width: 18rem;
+    font-size: 2rem;
+   }
