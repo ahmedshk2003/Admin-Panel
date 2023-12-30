@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import Layout from './Layout';
 import { Email } from "./login/Email";
 import { Password } from "./login/Password";
@@ -11,16 +11,24 @@ const App = () => {
     email: '',
     password: '',
     otp: '',
-  
+
   });
 
   const [error, setError] = useState('')
 
+  useEffect(() => {
+    
+    const isLoggedIn = localStorage.getItem('LoggedIn' , '1') 
+    if (isLoggedIn) {
+      setAuthStep('layout');
+    }
+  }, []);
+
 
   const data = {
 
-    email: 'saad',
-    password: 'saad',
+    email: 'Ahmed',
+    password: 'Ahmed',
     otp: '1234'
   };
 
@@ -37,7 +45,7 @@ const App = () => {
 
 
 
-  
+
 
   const handleEmail = () => {
     if (data.email === newData.email.trim()) {
@@ -66,7 +74,7 @@ const App = () => {
     }
   };
 
-  // const isLoggedIn = localStorage.getItem('LoggedIn')
+
   return (
     <>
 
@@ -91,15 +99,15 @@ const App = () => {
               change={(e) => handleValidation(e, "otp")}
               value={newData.otp}
               error={error}
-              
-             
+
+
             />
-            
-           
+
+
             : authStep === 'layout' ?
               <Layout />
               : null}
-                    
+
     </>
   );
 };
