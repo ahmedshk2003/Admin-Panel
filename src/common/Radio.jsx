@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Style.css"
 
-const Radio = ({name, value, LabelName, className1="radio-label", className2="checkmark" }) => {
+const Radio = ({name, value, LabelName, className1="radio-label", className2=".checkmark" }) => {
 
 //     <label class="radio-label">
 //     <input type="radio" name="gender" value="male">
