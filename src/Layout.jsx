@@ -10,9 +10,19 @@ import { Main } from './Main'
 import AddInventory from './pages/AddInventory';
 import ShowInventory from './pages/ShowInventory';
 import Invoice from './pages/Invoice';
-
+import { useEffect } from 'react';
 
 const Layout = () => {
+
+//default page
+    useEffect(() => {
+
+        const isOnDefaultPage = window.location.pathname === '/';
+
+        if (!isOnDefaultPage) {
+          window.location.href = '/';
+        }
+      }, []);
 
     return (
         <div>

@@ -48,6 +48,10 @@ export const Home = () => {
       amt: 700,
     },
   ];
+
+
+  
+
   return (
     <main className='mainContainer'>
       <div className='mainTitle'>

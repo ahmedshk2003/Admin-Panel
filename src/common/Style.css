@@ -4,24 +4,66 @@
      font-size: 1rem;
      border-radius: 0.4rem;
      border: none;
-     margin-left: 2rem;
+     /* margin-left: 2rem; */
+     background-color: rgba(0, 0, 0, 0.425);
+    color: wheat;
  }
+
+ .Capital-style{
+  width: 20rem;
+     font-size: 1rem;
+     border-radius: 0.4rem;
+     border: none;
+     /* margin-left: 2rem; */
+     background-color: rgba(0, 0, 0, 0.425);
+    color: wheat;
+    text-transform: uppercase;
+ }
+
+  /* global input date type  */
+
+    /* Reset default styles */
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+
+/* Style the date picker close button (X) */
+
 
 
  /* global select and option  */
- .Gloabal-select {
+ .Global-select {
+    border-radius: 0.4rem;
      width: 18rem;
-     height: 2rem;
+     height: 2.5rem;
      cursor: pointer;
+     background-color: rgba(0, 0, 0, 0.425);
+     color: white;
  }
 
- .Gloabal-option {
+ 
+ .Global-option {
      width: 18rem;
      font-size: 1rem;
      cursor: pointer;
+     background-color: rgba(0, 0, 0, 0.932); 
+
  }
 
+ .Global-option:hover{
+    background-color: rgba(0, 0, 0, 0.425);  ;
+ }
 
+/* global radio  */
  .radio-label {
     display: flex;
     align-items: center;
@@ -30,6 +72,7 @@
     font-size: 16px;
     user-select: none;
     margin-bottom: 15px;
+    width: 15rem;
   }
   
   /* Style the radio inputs */
@@ -65,3 +108,67 @@
     background-color: #fff;
     border-radius: 50%;
   }
+
+  /* Global- button  */
+
+  .Global-button{
+   padding: 0.5rem 1.5rem;
+   font-size: 1rem;
+   font-weight:600;
+   background-color: greenyellow;
+   border-radius: 0.2rem;
+   border: none;
+   cursor: pointer;
+  }
+
+  .Global-button:hover{
+    background-color: rgba(172, 255, 47, 0.445);
+  }  
+
+/* Global textarea */
+.Global-textarea{
+    width: 28rem;
+    font-size: 1.2rem;
+    height: 10rem;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.425);
+    color: wheat;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Global-label */
+
+.Global-Label{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;   
+}
+
+.Global-Label> h4{
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Submit popup  */
+.SubmitPopup{
+  background-color: rgba(0, 0, 0, 0.726);
+  position: absolute;
+  right: 0;
+}
+
+.SubmitPopup > h3{
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.SubmitPopup > div{
+height: 0.5rem;
+background-color: green;
+padding: 0;
+}

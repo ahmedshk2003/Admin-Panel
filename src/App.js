@@ -17,13 +17,13 @@ const App = () => {
 
   const [error, setError] = useState('')
 
-  useEffect(() => {
+  // useEffect(() => {
     
-    const isLoggedIn = localStorage.getItem('LoggedIn' , '1') 
-    if (isLoggedIn) {
-      setAuthStep('layout');
-    }
-  }, []);
+  //   const isLoggedIn = localStorage.getItem('LoggedIn' , '1') 
+  //   if (isLoggedIn) {
+  //     setAuthStep('layout');
+  //   }
+  // }, []);
 
 
   const data = {

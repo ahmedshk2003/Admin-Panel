@@ -7,10 +7,12 @@ const Inventory= createSlice({
         addinventory(state, actions){
          state.push(actions.payload)
         },
-        
+        DeleteInventory(state, actions){
+            return state.splice(actions.payload, 1);
+        }
     }
 })
 
 
 export default Inventory.reducer
-export const {addinventory} = Inventory.actions
+export const {addinventory,  DeleteInventory} = Inventory.actions

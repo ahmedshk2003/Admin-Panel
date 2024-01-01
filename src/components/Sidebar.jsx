@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsListCheck, BsMenuButtonWideFill, BsFillGearFill } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+
 
 export const Sidebar = ({ openSidebarToggle }) => {
 
@@ -8,7 +9,7 @@ export const Sidebar = ({ openSidebarToggle }) => {
     drop: 0
   });
 
-
+const navigate= useNavigate()
 
   // [
   //   {
@@ -28,7 +29,13 @@ export const Sidebar = ({ openSidebarToggle }) => {
 
   };
 
-  const { drop } = dropdown
+  const sidebarListUnderStyle = {
+    height: dropdown.drop === 1 ? "6rem" : "0", 
+    overflow: "hidden",  
+    transition: "height 0.5s ease" ,
+    lisStyle:"armenian",
+  };
+
 
   return (
     <aside id='sidebar' className={openSidebarToggle ? "sidebarResponsive" : ""}>
@@ -41,43 +48,34 @@ export const Sidebar = ({ openSidebarToggle }) => {
 
       </div>
       <ul className='sidebarList'>
-        <li className='sidebarListItem'>
-          <Link to="/">
+        <li className='sidebarListItem' onClick={()=> navigate("/")}>
+          
             <BsGrid1X2Fill className='icon' /> Dashboard
-          </Link>
-
+    
         </li>
         <li className='sidebarListItem' onClick={() => handleInventry()}>
 
           <BsFillArchiveFill className='icon' /> Inventory
 
         </li>
-        {
-          drop === 1 ? (
 
-            <ul className='sidebarList-under'>
-              <li className='sidebarListItem-under'>
-                <Link to="/addinventory">
+            <ul style={sidebarListUnderStyle}>
+              <li className='sidebarListItem-under'onClick={()=> navigate("/addinventory")} >
+        
                   Add products
-                </Link>
+    
               </li>
-              <li className='sidebarListItem-under'>
-                <Link to="/showinventry">
+              <li className='sidebarListItem-under' onClick={()=> navigate("/showinventry")}>
+            
                   Show products
-                </Link>
+    
               </li>
             </ul>
-          ) : null
-        }
-
-
-
-
-
-          <li className='sidebarListItem'>
-         <Link to="/invoice">
+         
+          <li className='sidebarListItem' onClick={()=> navigate("/invoice")}>
+        
             <BsFillGrid3X3GapFill className='icon' /> Invoice
-            </Link>
+  
         </li>
 
       </ul>

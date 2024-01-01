@@ -3,7 +3,9 @@ body {
     padding: 0;
     background-color: #1d2634;
     color: #9e9ea4;
-    font-family: 'Montserrat', sans-serif;
+}
+*{
+    font-family: "Roboto"
 }
 
 .gridContainer {
@@ -90,7 +92,7 @@ body {
 }
 
 .sidebarListItem-under {
-    padding: 10px 20px 5px 50px;
+    padding: 20px 2px 5px 10px;
     font-size: 15px;
 }
 
@@ -106,6 +108,7 @@ body {
 .sidebarListItem>a {
     text-decoration: none;
     color: #9e9ea4;
+    
 }
 
 .sidebarListItem-under>a {
@@ -129,6 +132,7 @@ body {
 .mainTitle {
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .mainCards {
@@ -275,3 +279,37 @@ body {
     color: #d50000;
  }
 
+/* show inventory style */
+.show-inventory{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.show-inventory-head{
+    background-color: #2e7d32a9;
+}
+
+.show-inventory-head > tr{
+    font-size: 1.2rem;
+    font-weight: 600;
+    
+}
+
+.show-inventory-head>tr >th{
+width: 13rem;
+text-align: center;
+padding: 1rem;
+}
+
+.inventory-items{
+    
+}
+
+.inventory-items > tr{
+
+}
+
+.inventory-items> tr >td{
+text-align: center;
+}
