@@ -172,3 +172,66 @@ height: 0.5rem;
 background-color: green;
 padding: 0;
 }
+  
+
+ /* Style the radio inputs */
+ .radio-label input {
+   opacity: 0;
+   position: absolute;
+ }
+
+/* // checkbox style  */
+ .checkbox-container {
+   display: block;
+   position: relative;
+   padding-left: 35px;
+   margin-bottom: 15px;
+   cursor: pointer;
+   font-size: 16px;
+ }
+
+ /* Hide the default checkbox */
+ .checkbox-container input {
+   position: absolute;
+   opacity: 0;
+   cursor: pointer;
+ }
+
+ /* Style for the custom checkbox */
+ .checkbox {
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 25px;
+   width: 25px;
+   background-color: #eee;
+   border: 1px solid #ccc;
+ }
+
+ /* Style for the checkmark when the checkbox is checked */
+ .checkbox-container input:checked+.checkbox {
+   background-color: #2196F3;
+ }
+
+ /* Style for the checkmark inside the checkbox */
+ .checkbox:after {
+   content: "";
+   position: absolute;
+   display: none;
+ }
+
+ /* Display the checkmark when the checkbox is checked */
+ .checkbox-container input:checked+.checkbox:after {
+   display: block;
+ }
+
+ /* Style for the checkmark icon */
+ .checkbox-container .checkbox:after {
+   left: 9px;
+   top: 5px;
+   width: 5px;
+   height: 10px;
+   border: solid white;
+   border-width: 0 3px 3px 0;
+   transform: rotate(45deg);
+ }
