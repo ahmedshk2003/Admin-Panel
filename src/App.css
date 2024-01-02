@@ -302,14 +302,27 @@ text-align: center;
 padding: 1rem;
 }
 
-.inventory-items{
-    
-}
-
-.inventory-items > tr{
-
-}
 
 .inventory-items> tr >td{
 text-align: center;
+}
+
+
+/* sign out style */
+
+.signout-button{
+    text-align: center;
+padding: 0.5rem 1.5rem ;
+background-color: #2e7d32;
+border: none;
+border-radius: 0.2rem;
+color: white;
+cursor: pointer;
+font-size: 1.2rem;
+font-weight: 600;
+margin: 20px 20px 20px 20px ;
+}
+
+.signout-button:hover{
+    background-color: #2e7d32af;
 }

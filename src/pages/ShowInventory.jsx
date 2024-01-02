@@ -1,21 +1,15 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import InventoryList from '../components/InventoryList';
-import utils from "../utils/index"
-//    pick from these items only
-//       category:
-//       name: 
-//       key:
-//       cost: 
-//       quantity: 
-//       wholsellerName: 
-//       Address:
-//       ItemsStatus: 
-//       Date:
-
+import { useDispatch } from 'react-redux';
+import { DeleteInventory } from '../redux/slices/Inventory';
+import Button from '../common/Button';
 const ShowInventory = () => {
 
-  const InventoryDetails = JSON.parse(utils.getLocalStorage('InventoryDetails'));
+  const dispatch=useDispatch()
+    const DeleteItem= (id) =>{
+      return dispatch(DeleteInventory(id))
+    }
 
   const data = useSelector((state) => {
     return state.INVENTORY_ITEMS;
@@ -50,6 +44,7 @@ const ShowInventory = () => {
             manufacturer={elem.wholsellerName}
             quantity={elem.quantity}
             Cost={elem.cost}
+            buttonName={<Button button={"DELETE"} onclick={()=> DeleteItem(id)} />}
             />)
           }))
         }

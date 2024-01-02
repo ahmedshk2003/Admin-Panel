@@ -11,6 +11,7 @@ import AddInventory from './pages/AddInventory';
 import ShowInventory from './pages/ShowInventory';
 import Invoice from './pages/Invoice';
 import { useEffect } from 'react';
+import CustomerReview from './pages/CustomerReview';
 
 const Layout = () => {
 
@@ -34,6 +35,7 @@ const Layout = () => {
                         <Route path='/addinventory' element={<AddInventory />} />
                         <Route path='/showinventry' element={<ShowInventory />} />
                         <Route path='/invoice' element={<Invoice/>} />
+                        <Route path='/CustomerRiview' element={<CustomerReview/>} />
                     </Routes>
                 </Main>
             </Router>

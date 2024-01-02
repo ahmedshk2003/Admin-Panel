@@ -1,11 +1,10 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from './Layout';
 import { Email } from "./login/Email";
 import { Password } from "./login/Password";
 import { Otp } from "./login/Otp";
 import './App.css'
 import utils from "./utils/index";
-
 const App = () => {
   const [authStep, setAuthStep] = useState('email');
   const [newData, setNewData] = useState({
@@ -18,7 +17,7 @@ const App = () => {
   const [error, setError] = useState('')
 
   // useEffect(() => {
-    
+
   //   const isLoggedIn = localStorage.getItem('LoggedIn' , '1') 
   //   if (isLoggedIn) {
   //     setAuthStep('layout');
@@ -45,9 +44,6 @@ const App = () => {
 
 
 
-
-
-
   const handleEmail = () => {
     if (data.email === newData.email.trim()) {
       setAuthStep('password');
@@ -66,11 +62,14 @@ const App = () => {
     }
   };
 
+
   const handleOtp = () => {
     if (data.otp === newData.otp) {
       localStorage.setItem('loggedin', JSON.stringify({ email: newData.email, password: newData.password, otp: newData.otp }));
       localStorage.setItem('validation', 1)
-      setAuthStep('layout');
+      //signin functionality
+      setAuthStep("layout")
+
     } else {
       setError('Invalid OTP. Please enter the correct OTP.');
     }
@@ -117,13 +116,13 @@ const App = () => {
     <>
 
       {
-        authStep === 'layout' ||  Number(Validation) === 1? (
+        authStep== "layout" || Number(Validation) === 1 ? (
           <Layout />
-        ):(
+        ) : (
           LoginRenderFunction()
         )
 
-        }
+      }
     </>
   );
 };
