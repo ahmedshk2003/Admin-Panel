@@ -7,50 +7,52 @@ export const Home = () => {
   const data = [
     {
       name: 'Jan',
-      uv: 100,
-      pv: 400,
+      TotalProfit: 30000,
+      TotalLoss: 20000,
+
 
     },
     {
       name: 'Feb',
-      uv: 300,
-      pv: 198,
-      amt: 200,
+      TotalProfit: 15000,
+      TotalLoss: 5000,
+
+
     },
     {
       name: 'March',
-      uv: 200,
-      pv: 900,
-      amt: 300,
+      TotalProfit: 50000,
+      TotalLoss: 30000,
+
     },
     {
       name: 'April',
-      uv: 280,
-      pv: 908,
-      amt: 400,
+      TotalProfit: 40000,
+      TotalLoss: 25000,
+
     },
     {
       name: 'May',
-      uv: 190,
-      pv: 800,
-      amt: 500,
+      TotalProfit: 10000,
+      TotalLoss: 5000,
+
     },
     {
       name: 'June',
-      uv: 390,
-      pv: 300,
-      amt: 600,
+      TotalProfit: 90000,
+      TotalLoss: 15000,
+
     },
     {
       name: 'July',
-      uv: 490,
-      pv: 300,
-      amt: 700,
+      TotalProfit: 20000,
+      TotalLoss: 5000,
+
     },
   ];
 
 
-  
+
 
   return (
     <main className='mainContainer'>
@@ -125,8 +127,8 @@ export const Home = () => {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="pv" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-            <Bar dataKey="uv" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+            <Bar dataKey="TotalProfit" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
+            <Bar dataKey="TotalLoss" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
           </BarChart>
         </ResponsiveContainer>
 
@@ -147,8 +149,8 @@ export const Home = () => {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-            <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+            <Line type="monotone" dataKey="TotalProfit" stroke="#8884d8" activeDot={{ r: 8 }} />
+            <Line type="monotone" dataKey="TotalLoss" stroke="#82ca9d" />
           </LineChart>
         </ResponsiveContainer>
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Radio from '../common/Radio';
 import { Checkbox } from '../common/Checkbox';
 import "./App.css"
+import { Input } from "../common/Input"
 
 
 
@@ -28,21 +29,6 @@ const Invoice = () => {
     e.preventDefault();
     setShowForm(false);
 
-
-
-    // const generatedInvoice = `
-    //   Invoice No.: ${invoiceData.invoiceNo}
-    //   Service Provider: ${invoiceData.serviceProvider}
-    //   GSTIN: ${invoiceData.GSTIN}
-    //   Customer Name: ${invoiceData.customerName}
-    //   Product Purchased: ${invoiceData.productPurchased}
-    //   State: ${invoiceData.state}
-    //   Location: ${invoiceData.location}
-    //   Total Amount: ${invoiceData.totalAmount}
-    //   Address: ${invoiceData.address}
-    // `;
-
-    // alert(generatedInvoice);
   };
 
   const goBackToForm = () => {
@@ -63,7 +49,11 @@ const Invoice = () => {
                 name="invoiceNo"
                 value={invoiceData.invoiceNo}
                 onChange={handleInputChange}
+  
               />
+
+             
+  
               <input
                 type="text"
                 placeholder='Service provider'
@@ -143,37 +133,59 @@ const Invoice = () => {
           </form >
 
         ) : (
-          <div>
-            <h2>Invoice Details</h2>
-            <pre>
-              Invoice No.: {invoiceData.invoiceNo}
-            </pre>
-            <pre>
-              Service Provider: {invoiceData.serviceProvider}
-            </pre>
-            <pre>
-              GSTIN: {invoiceData.GSTIN}
-            </pre>
-            <pre>
+          <div className='parentInvoice'>
 
-              Customer Name: {invoiceData.customerName}
-            </pre>
-            <pre>
-              State: {invoiceData.state}
-            </pre>
-            <pre>
-              Location: {invoiceData.location}
-            </pre>
-            <pre>
-              Total Amount: {invoiceData.totalAmount}
-            </pre>
-            <pre>
-              Address: {invoiceData.address}
-            </pre>
+            <div className='invoicePage'>
 
-            <button onClick={goBackToForm}>Go Back</button>
+              <p>
+                Invoice No. : {invoiceData.invoiceNo}
+
+              </p>
+
+              <hr />
 
 
+              <p>
+                Service Provider: {invoiceData.serviceProvider}
+              </p>
+              <hr />
+
+              <p>
+                GSTIN: {invoiceData.GSTIN}
+              </p>
+              <hr />
+
+
+              <p>
+                Customer Name: {invoiceData.customerName}
+              </p>
+              <hr />
+
+              <p>
+                State: {invoiceData.state}
+              </p>
+              <hr />
+
+              <p>
+                Location: {invoiceData.location}
+              </p>
+              <hr />
+
+              <p>
+                Total Amount: {invoiceData.totalAmount}
+              </p>
+              <hr />
+
+              <p>
+                Address: {invoiceData.address}
+              </p>
+              <hr />
+
+
+              <button onClick={goBackToForm}>Go Back</button>
+
+
+            </div>
           </div>
 
 
