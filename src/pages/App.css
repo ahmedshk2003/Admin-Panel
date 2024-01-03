@@ -1,3 +1,35 @@
-pre {
-    font-size: 30px;
-}
+
+
+  .invoice-container {
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(70, 52, 52, 0.1);
+  }
+
+  h2 {
+    color: white;
+    text-align: center;
+  }
+
+  p {
+    margin: 10px 0;
+    color: black;
+  }
+
+  button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }

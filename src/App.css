@@ -4,7 +4,8 @@ body {
     background-color: #1d2634;
     color: #9e9ea4;
 }
-*{
+
+* {
     font-family: "Roboto"
 }
 
@@ -34,7 +35,7 @@ body {
     margin-right: 5px;
 }
 
-.header   {
+.header {
     grid-area: header;
     height: 60px;
     display: flex;
@@ -42,6 +43,31 @@ body {
     justify-content: space-between;
     padding: 0 30px 0 30px;
     box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+}
+
+.invoicePage {
+
+
+    background-color: #fff;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    border-radius: 8px;
+
+    padding: 20px;
+
+
+}
+
+.parentInvoice {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    
+
 }
 
 .menuIcon {
@@ -108,7 +134,7 @@ body {
 .sidebarListItem>a {
     text-decoration: none;
     color: #9e9ea4;
-    
+
 }
 
 .sidebarListItem-under>a {
@@ -196,7 +222,7 @@ body {
 
 
 /* input fields  */
-.InputFields{
+.InputFields {
     border: 2px solid white;
 
 }
@@ -205,7 +231,7 @@ body {
 
 .loginTxt {
     color: white;
-  
+
 }
 
 .loginDiv {
@@ -217,13 +243,14 @@ body {
 
 }
 
-.loginInput{
+.loginInput {
     padding: 10px;
     width: 350px;
     margin-bottom: 40px;
 }
 
-.submitBtn , .giBtn{
+.submitBtn,
+.giBtn {
     padding: 8px;
     width: 150px;
     background-color: #2e7d32;
@@ -231,66 +258,67 @@ body {
     color: black;
     font-weight: 800;
     cursor: pointer;
-    
+
 }
- .submitBtn:hover{
-    border: 4px solid white;
- }
 
- .loginTxt{
+.submitBtn:hover {
+    /* border: 4px solid white; */
+}
+
+.loginTxt {
     font-size: 50px;
- }
+}
 
- 
 
-  /* involice styles */
- .invoiceInputs{
+
+/* involice styles */
+.invoiceInputs {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     height: 20vh;
     align-items: center;
-    
- }
 
- input{
+}
+
+input {
     padding: 10px;
     font-weight: 700;
     font-size: 25px;
- }
+}
 
- form {
+form {
     width: 100%;
- }
+}
 
- textarea{
+textarea {
     font-weight: 700;
     font-size: 25px;
     margin-left: 100px;
-    
- }
 
- .giBtn{
+}
+
+.giBtn {
     margin-left: 500px;
     margin-top: 50px;
- }
+}
 
- .errorTxt{
+.errorTxt {
     color: #d50000;
- }
+}
 
 /* show inventory style */
-.show-inventory{
+.show-inventory {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.show-inventory-head{
+.show-inventory-head {
     background-color: #2e7d32a9;
 }
 
-.show-inventory-head > tr{
+.show-inventory-head>tr {
     font-size: 1.2rem;
     font-weight: 600;
     
