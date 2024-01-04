@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from './Layout';
 import { Email } from "./login/Email";
 import { Password } from "./login/Password";
@@ -18,7 +18,7 @@ const App = () => {
   const [error, setError] = useState('')
 
   // useEffect(() => {
-    
+
   //   const isLoggedIn = localStorage.getItem('LoggedIn' , '1') 
   //   if (isLoggedIn) {
   //     setAuthStep('layout');
@@ -117,13 +117,13 @@ const App = () => {
     <>
 
       {
-        authStep === 'layout' ||  Number(Validation) === 1? (
+        authStep === 'layout' || Number(Validation) === 1 ? (
           <Layout />
-        ):(
+        ) : (
           LoginRenderFunction()
         )
 
-        }
+      }
     </>
   );
 };
