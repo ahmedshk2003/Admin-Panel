@@ -1,15 +1,9 @@
 import React from 'react'
-import Button from '../common/Button'
-import { useDispatch} from 'react-redux'
-import { DeleteInventory } from '../redux/slices/Inventory'
 
 
-const InventoryList = ({key, date, product_key,Categorys,product_name, Cost,status,manufacturer,address,quantity}) => {
+const InventoryList = ({key, date,buttonName, product_key,Categorys,product_name, Cost,status,manufacturer,address,quantity}) => {
     
-    const dispatch=useDispatch()
-    const DeleteItem= (key) =>{
-      return dispatch(DeleteInventory(key))
-    }
+    
     
     
     return (
@@ -31,7 +25,7 @@ const InventoryList = ({key, date, product_key,Categorys,product_name, Cost,stat
                         <p style={{margin:"0",}}>Address: {address}</p>
                     </td>
                     <td>
-                        <Button button={"DELETE"} onclick={()=> DeleteItem(key)} />
+                        {buttonName}
                     </td>
 
                 </tr>

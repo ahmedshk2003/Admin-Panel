@@ -7,8 +7,8 @@ const Inventory= createSlice({
         addinventory(state, actions){
          state.push(actions.payload)
         },
-        DeleteInventory(state, actions){
-            return state.splice(actions.payload, 1);
+        DeleteInventory(state, action){
+            return state.filter((item, index) => index !== action.payload);
         }
     }
 })

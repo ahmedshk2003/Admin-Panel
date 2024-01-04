@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import { BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsListCheck, BsMenuButtonWideFill, BsFillGearFill } from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom';
-
+import Button from '../common/Button';
+import utils from "../utils/index";
+import { useDispatch, useSelector } from "react-redux";
+import signout from "../redux/slices/Logedin"
+// import Loggedin_ITEMS from "../redux/Store"
 
 export const Sidebar = ({ openSidebarToggle }) => {
 
@@ -9,7 +13,24 @@ export const Sidebar = ({ openSidebarToggle }) => {
     drop: 0
   });
 
-const navigate= useNavigate()
+  
+  // signout functionality 
+  // const SignupData = useSelector((state) => {
+  //   return state.Loggedin_ITEMS;
+  // })
+  
+  const dispatch= useDispatch()
+  function gettinglocalStore() {
+    const signoutdetails = JSON.parse(utils.getLocalStorage('validation'));
+    const  signoutInt= Number(signoutdetails)
+    return signoutInt=0
+  }
+
+  const handleSignout= ()=>{
+    dispatch(signout())
+    gettinglocalStore()
+  }
+
 
   // [
   //   {
@@ -29,11 +50,15 @@ const navigate= useNavigate()
 
   };
 
+  //use navigate for router
+  const navigate = useNavigate()
+
+
   const sidebarListUnderStyle = {
-    height: dropdown.drop === 1 ? "6rem" : "0", 
-    overflow: "hidden",  
-    transition: "height 0.5s ease" ,
-    lisStyle:"armenian",
+    height: dropdown.drop === 1 ? "6rem" : "0",
+    overflow: "hidden",
+    transition: "height 0.5s ease",
+    lisStyle: "armenian",
   };
 
 
@@ -48,10 +73,10 @@ const navigate= useNavigate()
 
       </div>
       <ul className='sidebarList'>
-        <li className='sidebarListItem' onClick={()=> navigate("/")}>
-          
-            <BsGrid1X2Fill className='icon' /> Dashboard
-    
+        <li className='sidebarListItem' onClick={() => navigate("/")}>
+
+          <BsGrid1X2Fill className='icon' /> Dashboard
+
         </li>
         <li className='sidebarListItem' onClick={() => handleInventry()}>
 
@@ -59,24 +84,33 @@ const navigate= useNavigate()
 
         </li>
 
-            <ul style={sidebarListUnderStyle}>
-              <li className='sidebarListItem-under'onClick={()=> navigate("/addinventory")} >
-        
-                  Add products
-    
-              </li>
-              <li className='sidebarListItem-under' onClick={()=> navigate("/showinventry")}>
-            
-                  Show products
-    
-              </li>
-            </ul>
-         
-          <li className='sidebarListItem' onClick={()=> navigate("/invoice")}>
-        
-            <BsFillGrid3X3GapFill className='icon' /> Invoice
-  
+        <ul style={sidebarListUnderStyle}>
+          <li className='sidebarListItem-under' onClick={() => navigate("/addinventory")} >
+
+            Add products
+
+          </li>
+          <li className='sidebarListItem-under' onClick={() => navigate("/showinventry")}>
+
+            Show products
+
+          </li>
+        </ul>
+
+        <li className='sidebarListItem' onClick={() => navigate("/invoice")}>
+
+          <BsFillGrid3X3GapFill className='icon' /> Invoice
+
         </li>
+
+      <li className='sidebarListItem' onClick={() => navigate("/CustomerRiview")}>
+
+          <BsFillGrid3X3GapFill className='icon' /> Clients Review
+
+        </li>         
+
+        <Button button={"Sign Out"} className={"signout-button"} onclick={() => handleSignout()} />
+
 
       </ul>
     </aside>

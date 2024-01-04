@@ -262,7 +262,7 @@ body {
 }
 
 .submitBtn:hover {
-    border: 4px solid white;
+    /* border: 4px solid white; */
 }
 
 .loginTxt {
@@ -321,19 +321,36 @@ textarea {
 .show-inventory-head>tr {
     font-size: 1.2rem;
     font-weight: 600;
-
+    
 }
 
-.show-inventory-head>tr>th {
-    width: 13rem;
-    text-align: center;
-    padding: 1rem;
+.show-inventory-head>tr >th{
+width: 13rem;
+text-align: center;
+padding: 1rem;
 }
 
-.inventory-items {}
 
-.inventory-items>tr {}
+.inventory-items> tr >td{
+text-align: center;
+}
 
-.inventory-items>tr>td {
+
+/* sign out style */
+
+.signout-button{
     text-align: center;
+padding: 0.5rem 1.5rem ;
+background-color: #2e7d32;
+border: none;
+border-radius: 0.2rem;
+color: white;
+cursor: pointer;
+font-size: 1.2rem;
+font-weight: 600;
+margin: 20px 20px 20px 20px ;
+}
+
+.signout-button:hover{
+    background-color: #2e7d32af;
 }

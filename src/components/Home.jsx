@@ -68,40 +68,40 @@ export const Home = () => {
 
 
           </div>
-          <h1>300</h1>
+          <h1>300K</h1>
 
         </div>
 
         <div className='card'>
           <div className='cardInner'>
-            <h3>CATEGORIES</h3>
+            <h3>CUSTOMER</h3>
             <BsFillGrid3X3GapFill className='cardIcon' />
 
 
           </div>
-          <h1>12</h1>
+          <h1>12K</h1>
 
         </div>
 
         <div className='card'>
           <div className='cardInner'>
-            <h3>CUSTOMERS</h3>
+            <h3>TOTAL PROFIT</h3>
             <BsPeopleFill className='cardIcon' />
 
 
           </div>
-          <h1>33</h1>
+          <h1>500K</h1>
 
         </div>
 
         <div className='card'>
           <div className='cardInner'>
-            <h3>ALERTS</h3>
+            <h3>TOTAL LOSS</h3>
             <BsFillBellFill className='cardIcon' />
 
 
           </div>
-          <h1>42</h1>
+          <h1>100K</h1>
 
         </div>
 
